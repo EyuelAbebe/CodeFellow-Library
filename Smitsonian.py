@@ -9,10 +9,9 @@ def openLibrary():
     """
         Welcome page and user selection.
     """
-    print subject_options
     print welcome
     user_selection = raw_input(main_menu)
-    processSelection(user_selection)
+    processSubjectSelection(user_selection)
 
 
 def showSubjects():
@@ -61,7 +60,7 @@ def validateSubjectSelection(user_selection, count):
     counter = count
 
     if counter == 0:
-        processSelection("E")
+        processSubjectSelection("E")
 
     if (user_selection not in subject_options):
         return True
@@ -91,14 +90,14 @@ def validateMenuSelection(user_selection, count):
 
     if user_selection not in menu_options:
         if counter == 0:
-            processSelection('E')
+            processSubjectSelection('E')
         else:
             print "Please make your selection from the options presented!"
             user_selection = raw_input(main_menu)
-            processSelection(user_selection)
+            processSubjectSelection(user_selection)
 
 
-def processSelection(user_selection):
+def processSubjectSelection(user_selection):
 
     """
       Takes the user_selection from main menu and proceeds with corresponding options.
@@ -113,9 +112,9 @@ def processSelection(user_selection):
 
         #book_selection = raw_input("")
 
-    if user_selection == 'B': processSelection('E')
-    if user_selection == 'C': processSelection('E')
-    if user_selection == 'D': processSelection('E')
+    if user_selection == 'B': processSubjectSelection('E')
+    if user_selection == 'C': processSubjectSelection('E')
+    if user_selection == 'D': processSubjectSelection('E')
     if user_selection == 'E':
         print "******* Thank you for visiting Smithsonian Library! GOOD DAY *******"
         sys.exit()
