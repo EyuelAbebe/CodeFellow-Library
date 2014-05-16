@@ -67,7 +67,9 @@
 #
 # ...
 
-global list_of_shelves #Contains subjects of books, index is shelfId
+__author__ = 'eyuelabebe'
+
+global list_of_shelves #Contains the subjects of books, index is shelfId
 list_of_shelves = []
 
 global books # key = bookId, value = book title
@@ -75,3 +77,6 @@ books = {}
 
 global book_quantity # key = book_name, value = quantity
 book_quantity = {}
+
+global contentOfShelves #contains books in each shelf. Each item is a dictionary with key as book id and value a tuple of book title and book quantity.
+contentOfShelves = []

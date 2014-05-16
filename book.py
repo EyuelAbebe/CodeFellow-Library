@@ -1,7 +1,8 @@
 __author__ = 'eyuelabebe'
 
-from constants import book_quantity, books, list_of_shelves
+from constants import book_quantity, books, list_of_shelves, contentOfShelves
 from random import randrange
+from shelf import *
 
 
 class Book():
@@ -9,13 +10,11 @@ class Book():
         self.name = name.lower()
         self.subject = subject.lower()
         self.id = self.generateId()
-        #self.quantity = self.quantity()
 
         #self.enshelf()
 
     def generateId(self):
         bookid = randrange(len(self.name)*randrange(1000))%1000
-        print bookid
         books.update({bookid: self.name})
         self._updateQuantity()
         return bookid
@@ -27,26 +26,24 @@ class Book():
             book_quantity[self.name] = bookqty
         else:
             book_quantity.update({self.name: 1})
-        print book_quantity
-
+        #print book_quantity
 
     def quantity(self):
         return book_quantity[self.name]
 
-    def enshelf(self, subject):
-        pass
+    def enshelf(self):
+        if self.subject not in list_of_shelves:
+            Shelf(self.subject)
+            contentOfShelves[list_of_shelves.index(self.subject)][0][self.subject].update({self.name: self.quantity()})
+        else:
+            contentOfShelves[list_of_shelves.index(self.subject)][0][self.subject].update({self.name: self.quantity()})
+
 
     def unshelf(self):
-        pass
-
-
-c = Book('topology', 'math')
-d = Book('topology', 'math')
-e = Book('algebra', 'math')
-f = Book('electricity', 'physics')
+        _shelfContent = contentOfShelves[list_of_shelves.index(self.subject)][0]
+        _title = books[self.id]
+        _shelfContent[self.subject][_title] += -1
+        del books[self.id]
 
 
 
-#print books
-#print list_of_shelves
-print c.name, c.subject, d.quantity(), c.quantity()
