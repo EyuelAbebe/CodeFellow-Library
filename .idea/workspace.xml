@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Library.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library.py" afterPath="$PROJECT_DIR$/Library.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/book.py" afterPath="$PROJECT_DIR$/book.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/constants.py" afterPath="$PROJECT_DIR$/constants.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shelf.py" afterPath="$PROJECT_DIR$/shelf.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -13,9 +13,10 @@
     <file path="/Dummy.txt" changelist="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" time="1400131861779" ignored="false" />
     <file path="/Smitsonian.py" changelist="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" time="1400180081368" ignored="false" />
     <file path="/constants.py" changelist="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" time="1400218831357" ignored="false" />
-    <file path="/book.py" changelist="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" time="1400275277356" ignored="false" />
-    <file path="/shelf.py" changelist="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" time="1400275425617" ignored="false" />
-    <file path="/Library.py" changelist="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" time="1400277495867" ignored="false" />
+    <file path="/book.py" changelist="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" time="1400358334849" ignored="false" />
+    <file path="/shelf.py" changelist="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" time="1400356415519" ignored="false" />
+    <file path="/Library.py" changelist="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" time="1400359529355" ignored="false" />
+    <file path="/Test.py" changelist="43e0fdf4-d5d3-4189-a12a-c13c9b38617b" time="1400359287534" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
       <file leaf-file-name="book.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/book.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="0" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.0">
+            <state line="19" column="0" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#27#104#0" expanded="true" />
               </folding>
@@ -55,21 +56,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shelf.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="shelf.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shelf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.0">
+            <state line="3" column="62" selection-start="90" selection-end="90" vertical-scroll-proportion="0.04450262">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Library.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Library.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Library.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="20" selection-start="973" selection-end="973" vertical-scroll-proportion="0.2918919">
+            <state line="29" column="8" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#27#45#0" expanded="true" />
+                <element signature="e#28#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Smitsonian.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Smitsonian.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="130" column="0" selection-start="3037" selection-end="3037" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#2#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="67" column="0" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1052#1070#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,9 +118,10 @@
       <list>
         <option value="$PROJECT_DIR$/Smitsonian.py" />
         <option value="$PROJECT_DIR$/constants.py" />
-        <option value="$PROJECT_DIR$/shelf.py" />
         <option value="$PROJECT_DIR$/book.py" />
+        <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/Library.py" />
+        <option value="$PROJECT_DIR$/shelf.py" />
       </list>
     </option>
   </component>
@@ -175,7 +199,7 @@
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
   </component>
-  <component name="RunManager" selected="Python.Library">
+  <component name="RunManager" selected="Python.Test">
     <configuration default="false" name="Smitsonian" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -256,6 +280,29 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Library.py" />
       <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonCover" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonCover" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CodeFellows-Library" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test.py" />
+      <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
@@ -320,18 +367,20 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Smitsonian" />
       <item index="1" class="java.lang.String" itemvalue="Python.shelf" />
       <item index="2" class="java.lang.String" itemvalue="Python.book" />
       <item index="3" class="java.lang.String" itemvalue="Python.Library" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Test" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.Library" />
-        <item index="1" class="java.lang.String" itemvalue="Python.book" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.Test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Library" />
         <item index="2" class="java.lang.String" itemvalue="Python.shelf" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Smitsonian" />
+        <item index="3" class="java.lang.String" itemvalue="Python.book" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Smitsonian" />
       </list>
     </recent_temporary>
   </component>
@@ -363,18 +412,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="22" width="1395" height="878" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1386212" sideWeight="0.52506596" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1386212" sideWeight="0.5408971" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39973614" sideWeight="0.8109711" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13194959" sideWeight="0.42744064" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28759894" sideWeight="0.52038544" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47493404" sideWeight="0.47961453" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4591029" sideWeight="0.47961453" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.49962935" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -443,13 +492,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/shelf.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -457,35 +499,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Smitsonian.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="0" selection-start="3037" selection-end="3037" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#2#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1123" column="0" selection-start="46950" selection-end="46950" vertical-scroll-proportion="36.65127">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shelf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/book.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="0" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#27#104#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -496,12 +513,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Smitsonian.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="0" selection-start="3037" selection-end="3037" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#27#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="0" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1052#1070#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Library.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="20" selection-start="973" selection-end="973" vertical-scroll-proportion="0.2918919">
+        <state line="29" column="8" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#27#45#0" expanded="true" />
+            <element signature="e#28#51#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shelf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="62" selection-start="90" selection-end="90" vertical-scroll-proportion="0.04450262">
+          <folding />
         </state>
       </provider>
     </entry>

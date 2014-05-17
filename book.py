@@ -15,6 +15,9 @@ class Book():
 
     def generateId(self):
         bookid = randrange(len(self.name)*randrange(1000))%1000
+        if bookid in books.keys():
+            bookid = randrange(len(self.name)*randrange(1000))%1000
+
         books.update({bookid: self.name})
         self._updateQuantity()
         return bookid

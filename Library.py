@@ -1,90 +1,48 @@
 __author__ = 'eyuelabebe'
 
-from book import *
-from shelf import *
+
 from constants import *
+from shelf import *
+from book import *
 
-def getShelfNumber(subject):
-        return list_of_shelves.index(subject)
-
-def showShelfBooks(subject):
-    _shelf = contentOfShelves[getShelfNumber(subject)][0][subject]
-    _spacer = len(subject)
-
-    print "=" * (_spacer *7 + 9)
-    print subject.upper() + " " * (_spacer ) + "ID" + " " * (_spacer*2 - 2) + "TITLE" + " " *(_spacer *3 -5 ) + "QUANTITY"
-    print "-" * (_spacer *7 + 9)
-
-    if _shelf.keys() == []:
-        print "Shelf is Empty!"
-    else:
-        for key in _shelf:
-            print " " * (_spacer *2) + "000" + " " * ((_spacer *2) - 3) + key.upper() + " " * ((_spacer *3) - len(key)) + str(_shelf[key])
-
-    print "=" * (_spacer *7 + 9)
-    print
-    print
-    print
-
-
-def showAllBooks():
-    if books == {}:
-        print "This is a new Libarry. We have no books yet."
-    else:
-        print "="*25
-        print "ID" + " "*11 + "TITLE"
-        print "-"*25
-        for key, value in books.iteritems():
-            print str(key) + " "*(13 - len(str(key))) + value.upper()
-        print "="*25
+class Library():
+    def __init__(self):
+        self.name = raw_input("Enter name of Library: ")
+        print "Lets build the " + self.name + " Library!"
+        _original_number_of_shelves = raw_input("How many shelves do you want this Library to have? ")
+        for i in range(int(_original_number_of_shelves)):
+            _shelfSubject = raw_input("Please enter subject for shelf - " + str(i+1) + " ")
+            Shelf(_shelfSubject)
+            _number_of_shelf_books = raw_input("How many Books would you like to add to this shelf? ")
+            for j in range(int(_number_of_shelf_books)):
+                _bookTitle = raw_input("Add Title for book - " + str(j + 1) + " ")
+                Book(_bookTitle, list_of_shelves[i]).enshelf()
 
 
 
-#================================================= TEST =================================================
-from pprint import pprint
+    def showAllShelves(self):
+
+        print
+        print "*"*255
+        print " "*122 + "CONTENTS OF " + self.name + " Library"
+        print "*"*255
+        print
+        
+        for i in range(len(list_of_shelves)):
+            showShelfBooks(list_of_shelves[i])
+
+    def showAllBooks(self):
+        if books == {}:
+            print "This is a new Library. We have no books yet."
+        else:
+            print "="*25
+            print "ID" + " "*11 + "TITLE"
+            print "-"*25
+            for key, value in books.iteritems():
+                print str(key) + " "*(13 - len(str(key))) + value.upper()
+            print "="*25
 
 
-c = Book('topology', 'math')
-d = Book('topology', 'math')
-e = Book('algebra', 'math')
-f = Book('electricity', 'physics')
-g = Book('orgo', 'chemistry')
-h = Book('inorgo', 'chemistry')
-i = Book('cells', 'biology')
-j = Book('magnetism', 'physics')
-k = Book('electricity', 'physics')
-
-
-c.enshelf()
-d.enshelf()
-e.enshelf()
-f.enshelf()
-
-g.enshelf()
-h.enshelf()
-i.enshelf()
-j.enshelf()
-k.enshelf()
-
-# math = Shelf("math")
-# math.showBooks()
-
-
-# pprint(books, width=40)
-# pprint(contentOfShelves, width=40)
-#
-# d.unshelf()
-#
-# math = Shelf("math")
-# math.showBooks()
-#
-#
-# pprint(books, width=40)
-# pprint(list_of_shelves, width=40)
-# # pprint(contentOfShelves, width=40)
-# #print c.name, c.subject, f.quantity(), j.quantity()
-
-for i in range(len(list_of_shelves)):
-    showBooks(list_of_shelves[i])
-
-showAllBooks()
+# c = Library()
+# c.showAllShelves()
+# c.showAllBooks()

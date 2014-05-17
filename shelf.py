@@ -1,7 +1,7 @@
 __author__ = 'eyuelabebe'
 
 
-from constants import list_of_shelves, contentOfShelves
+from constants import list_of_shelves, contentOfShelves, books
 
 class Shelf():
 
@@ -21,23 +21,23 @@ class Shelf():
     def _updatecontentOfShelves(self):
         contentOfShelves.append([{self.subject: {}}])
 
+
 def getShelfNumber(subject):
         return list_of_shelves.index(subject)
 
-
-def showBooks(subject):
+def showShelfBooks(subject):
     _shelf = contentOfShelves[getShelfNumber(subject)][0][subject]
     _spacer = len(subject)
 
     print "=" * (_spacer *7 + 9)
-    print subject.upper() + " " * (_spacer ) + "ID" + " " * (_spacer*2 - 2) + "TITLE" + " " *(_spacer *3 -5 ) + "QUANTITY"
+    print subject.upper()  + " " * (_spacer) + "TITLE" + " " * (_spacer *2 - 2) + "QUANTITY"
     print "-" * (_spacer *7 + 9)
 
     if _shelf.keys() == []:
         print "Shelf is Empty!"
     else:
         for key in _shelf:
-            print " " * (_spacer *2) + "000" + " " * ((_spacer *2) - 3) + key.upper() + " " * ((_spacer *3) - len(key)) + str(_shelf[key])
+            print " " * (_spacer *2) + key.upper() + " " * ((_spacer *2 ) - len(key)) + "   " + str(_shelf[key])
 
     print "=" * (_spacer *7 + 9)
     print
@@ -46,4 +46,5 @@ def showBooks(subject):
 
 
 
-
+# + " " * (_spacer ) + "ID"
+#  + "000" + " " * ((_spacer *2) - 3)
