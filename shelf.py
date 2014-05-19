@@ -1,6 +1,6 @@
 __author__ = 'eyuelabebe'
 
-
+import sys
 from constants import list_of_shelves, contentOfShelves, books
 
 class Shelf():
@@ -13,7 +13,11 @@ class Shelf():
 
     def createShelf(self):
         if self.subject in list_of_shelves:
-            print "Shelf already exists. " + self.subject.upper() + " is shelf - " + str(list_of_shelves.index(self.subject))
+            print
+            print "USER ERROR: Shelf already exists. " + self.subject.upper() + " is shelf - " + str(list_of_shelves.index(self.subject) + 1)
+            print "PLEASE RECREATE LIBRARY AGAIN! FOLLOW INSTRUCTIONS ACCORDINGLY. "
+            print
+            sys.exit()
         else:
             list_of_shelves.append(self.subject)
             self._updatecontentOfShelves()
@@ -25,24 +29,7 @@ class Shelf():
 def getShelfNumber(subject):
         return list_of_shelves.index(subject)
 
-def showShelfBooks(subject):
-    _shelf = contentOfShelves[getShelfNumber(subject)][0][subject]
-    _spacer = len(subject)
 
-    print "=" * (_spacer *7 + 9)
-    print subject.upper()  + " " * (_spacer) + "TITLE" + " " * (_spacer *2 - 2) + "QUANTITY"
-    print "-" * (_spacer *7 + 9)
-
-    if _shelf.keys() == []:
-        print "Shelf is Empty!"
-    else:
-        for key in _shelf:
-            print " " * (_spacer *2) + key.upper() + " " * ((_spacer *2 ) - len(key)) + "   " + str(_shelf[key])
-
-    print "=" * (_spacer *7 + 9)
-    print
-    print
-    print
 
 
 

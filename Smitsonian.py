@@ -1,78 +1,109 @@
 
+__author__ = 'eyuelabebe'
 
-from constants import *
+
+menu_options = ['A', 'B', 'C', 'D']
+wrong_menu_options = ['a', 'b', 'c', 'd']
+
+
 import sys
 
-
-def openLibrary():
-
-    """
-        Welcome page and user selection.
-    """
-    print welcome
-    user_selection = raw_input(main_menu)
-    processSubjectSelection(user_selection)
+def _welcome(name):
+    print "="*75
+    print "="*22 + " Welcome to the " + name + " Library " + "="*23
+    print "="*75
 
 
-def showSubjects():
+def _showMenu():
+    main_menu = """
+  You can A) Check out a book from the Library.
+          B) Return a book.
+          C) Browse.
+          D) Exit
 
-    """
-        Lists out all the that are subjects available.
-    """
-
-    print subjectChoices
+  Please make a selection:
+             """
+    print main_menu
 
 
-def selectSubject():
+def _processMenuSelection(user_selection, library):
 
     """
-        Shows subject choice then returns a users subject choice.
+      Takes the user_selection from main menu and proceeds with corresponding options.
     """
-    showSubjects()
-    user_selection = raw_input(selection)
-    validateSubjectSelection(user_selection, 3)
+    library = library
+    if user_selection == 'A':
 
-    return user_selection
+        try:
+            library.showAvailableShelves()
+            user_shelf_selection = raw_input("Choose a subject: ")
+
+            library.showShelfBooks(list_of_shelves[int(user_shelf_selection) - 1])
+            user_book_selection = raw_input("Choose a book: ")
+            try:
+                print books
+                print
+                print bookObjects
+                bookObjects[int(user_shelf_selection) - 1][int(user_book_selection)-1].unshelf()
+                print books
+                print
+                bookObjects[int(user_shelf_selection)-1].pop(int(user_book_selection)-1)
+                print bookObjects
+                print "Thank you for checking out " + books[bookObjects[int(user_shelf_selection) - 1][int(user_book_selection)-1].id] + ". Please return on time!"
+                print
+            except Exception as e:
+                print e
+                print "Sorry, we no longer have a copy of this book. Please check back again some other time."
+                print
+
+            _question = raw_input("Would you like to go back to the menu(M) or exit(D)")
+
+            if _question not in ['d', 'D', 'm', 'M']:
+                print
+                print "Please select from the options presented ('D', 'M')"
+                _newquestion = raw_input("Would you like to go back to the menu(M) or exit(D): ")
+                if _newquestion in ['M', 'm']:
+                    user_selection = raw_input(_showMenu())
+                    _processMenuSelection(user_selection, library)
+                else:
+                    _processMenuSelection('D', library)
+            else:
+                if _question in ['D', 'd']:
+                    print
+                    print " "*20 + "Thank for using " + library.name + " Library. Do not forget to return your book on time."
+                    _processMenuSelection('D', library)
+                if _question in ['M', 'm']:
+                    user_selection = raw_input(_showMenu())
+                    _processMenuSelection(user_selection, library)
+        except:
+            print
+            print "USER ERROR: ENTERED WRONG SELECTION. GOOD BYE!"
 
 
-def showBooks(subject):
-
-    """
-        Lists out all the books available in the given subject.
-    """
-
-    print "============================================================"
-    print "-- " + subjects[subject]
-    print " "
-    print " Id              Books"
-    print "====           ======== "
-    for key, value in book[subject].items():
-        print str(key) + "          " + str(value)
-
-    print " "
-
-def validateSubjectSelection(user_selection, count):
-
-    """
-        Validates if the user's subject selection is correct.
-    """
-
-    counter = count
-
-    if counter == 0:
-        processSubjectSelection("E")
-
-    if (user_selection not in subject_options):
-        return True
-    else:
-        counter += -1
-        print " "
-        print "Please pick from the options presented"
-        user_selection = raw_input(showSubjects())
-        validateSubjectSelection(user_selection, counter)
 
 
-def validateMenuSelection(user_selection, count):
+        ##book_id_selection = raw_input( "Choose a book id from the list")
+        ##print main_menu
+
+        #book_selection = raw_input("")
+    if user_selection == 'B':
+        _processMenuSelection('D')
+
+
+    if user_selection == 'C':
+        library.showAllBooks()
+        _selection = runMenu(library)
+        _processMenuSelection(_selection, library)
+
+    if user_selection == 'D':
+        print
+        print " "*20 + "******* Thank you for visiting " + library.name + " Library! GOOD DAY *******"
+        sys.exit()
+
+    _validateMenuSelection(user_selection, 3, library)
+
+
+def _validateMenuSelection(user_selection, count, library):
 
     """
         Validates user_selection from the main menu.
@@ -81,54 +112,41 @@ def validateMenuSelection(user_selection, count):
 
     if user_selection in wrong_menu_options:
         if counter == 0:
-            processSelection("E")
+            _processMenuSelection("D", library)
         else:
             counter += -1
+            print
             print "Please use capital letters."
-            user_selection = raw_input(main_menu)
-            validateMenuSelection(user_selection, counter)
+            user_selection = raw_input(_showMenu())
+            _validateMenuSelection(user_selection, counter)
 
     if user_selection not in menu_options:
         if counter == 0:
-            processSubjectSelection('E')
+            _processMenuSelection('D', library)
         else:
+            print
             print "Please make your selection from the options presented!"
-            user_selection = raw_input(main_menu)
-            processSubjectSelection(user_selection)
+            user_selection = raw_input(_showMenu())
+            _processMenuSelection(user_selection, library)
 
 
-def processSubjectSelection(user_selection):
-
-    """
-      Takes the user_selection from main menu and proceeds with corresponding options.
-    """
-
-    if user_selection == 'A':
-        user_subject_selection = int(selectSubject())
-        showBooks(user_subject_selection)
-
-        ##book_id_selection = raw_input( "Choose a book id from the list")
-        ##print main_menu
-
-        #book_selection = raw_input("")
-
-    if user_selection == 'B': processSubjectSelection('E')
-    if user_selection == 'C': processSubjectSelection('E')
-    if user_selection == 'D': processSubjectSelection('E')
-    if user_selection == 'E':
-        print "******* Thank you for visiting Smithsonian Library! GOOD DAY *******"
-        sys.exit()
-
-    validateMenuSelection(user_selection, 3)
+def runMenu(library):
+    user_selection = raw_input(_showMenu())
+    _validateMenuSelection(user_selection, 3, library)
+    return user_selection
 
 
+# ========================================================================================================================
 
+from Library import *
+from constants import *
 
-openLibrary()
+smitsonian = Library()
+_welcome(smitsonian.name)
+user_selection = raw_input(_showMenu())
+_processMenuSelection(user_selection, smitsonian)
 
-
-
-
+# ========================================================================================================================
 
 
 
