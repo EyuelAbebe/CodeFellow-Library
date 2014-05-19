@@ -10,4 +10,4 @@ Constant.py hold clobal constants that are necessary for running the application
 these 4 files.
 As a user, please type entries carefully(integers or strings, when appropriate).
 
-Inorder to start navigate to the project file and type __python Smitsonian.py__
+Inorder to start navigate to the project file and type _python Smitsonian.py_
