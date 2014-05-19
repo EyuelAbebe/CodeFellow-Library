@@ -2,8 +2,8 @@
 __author__ = 'eyuelabebe'
 
 
-menu_options = ['A', 'B', 'C', 'D']
-wrong_menu_options = ['a', 'b', 'c', 'd']
+menu_options = ['A', 'B', 'C']
+wrong_menu_options = ['a', 'b', 'c']
 
 
 import sys
@@ -17,11 +17,8 @@ def _welcome(name):
 def _showMenu():
     main_menu = """
   You can A) Check out a book from the Library.
-          B) Return a book.
-          C) Browse.
-          D) Exit
-
-  Please make a selection:
+          B) Browse.
+          C) Exit
              """
     print main_menu
 
@@ -41,61 +38,51 @@ def _processMenuSelection(user_selection, library):
             library.showShelfBooks(list_of_shelves[int(user_shelf_selection) - 1])
             user_book_selection = raw_input("Choose a book: ")
             try:
-                print books
-                print
-                print bookObjects
+
                 bookObjects[int(user_shelf_selection) - 1][int(user_book_selection)-1].unshelf()
-                print books
-                print
                 bookObjects[int(user_shelf_selection)-1].pop(int(user_book_selection)-1)
-                print bookObjects
                 print "Thank you for checking out " + books[bookObjects[int(user_shelf_selection) - 1][int(user_book_selection)-1].id] + ". Please return on time!"
                 print
             except Exception as e:
-                print e
+                #print e
                 print "Sorry, we no longer have a copy of this book. Please check back again some other time."
                 print
 
-            _question = raw_input("Would you like to go back to the menu(M) or exit(D)")
+            _question = raw_input("Would you like to go back to the menu(M) or exit(D): ")
 
-            if _question not in ['d', 'D', 'm', 'M']:
+            if _question not in ['C', 'c', 'm', 'M']:
                 print
-                print "Please select from the options presented ('D', 'M')"
-                _newquestion = raw_input("Would you like to go back to the menu(M) or exit(D): ")
+                print "Please select from the options presented ('C', 'M')"
+                _newquestion = raw_input("Would you like to go back to the menu(M) or exit(C): ")
                 if _newquestion in ['M', 'm']:
-                    user_selection = raw_input(_showMenu())
+                    print _showMenu()
+                    user_selection = raw_input(" Please make a selection: ")
                     _processMenuSelection(user_selection, library)
                 else:
-                    _processMenuSelection('D', library)
+                    _processMenuSelection('C', library)
             else:
-                if _question in ['D', 'd']:
+                if _question in ['C', 'c']:
                     print
                     print " "*20 + "Thank for using " + library.name + " Library. Do not forget to return your book on time."
-                    _processMenuSelection('D', library)
+                    _processMenuSelection('C', library)
                 if _question in ['M', 'm']:
-                    user_selection = raw_input(_showMenu())
+                    print _showMenu()
+                    user_selection = raw_input(" Please make a selection: ")
                     _processMenuSelection(user_selection, library)
         except:
             print
             print "USER ERROR: ENTERED WRONG SELECTION. GOOD BYE!"
+            sys.exit()
 
 
-
-
-        ##book_id_selection = raw_input( "Choose a book id from the list")
-        ##print main_menu
-
-        #book_selection = raw_input("")
     if user_selection == 'B':
-        _processMenuSelection('D')
-
-
-    if user_selection == 'C':
         library.showAllBooks()
-        _selection = runMenu(library)
+        print _showMenu()
+        _selection = raw_input("  Please make a selection:")
+        _validateMenuSelection(_selection, 3, library)
         _processMenuSelection(_selection, library)
 
-    if user_selection == 'D':
+    if user_selection == 'C':
         print
         print " "*20 + "******* Thank you for visiting " + library.name + " Library! GOOD DAY *******"
         sys.exit()
@@ -112,17 +99,17 @@ def _validateMenuSelection(user_selection, count, library):
 
     if user_selection in wrong_menu_options:
         if counter == 0:
-            _processMenuSelection("D", library)
+            _processMenuSelection("C", library)
         else:
             counter += -1
             print
             print "Please use capital letters."
             user_selection = raw_input(_showMenu())
-            _validateMenuSelection(user_selection, counter)
+            _validateMenuSelection(user_selection, counter, library)
 
     if user_selection not in menu_options:
         if counter == 0:
-            _processMenuSelection('D', library)
+            _processMenuSelection('C', library)
         else:
             print
             print "Please make your selection from the options presented!"
@@ -130,20 +117,14 @@ def _validateMenuSelection(user_selection, count, library):
             _processMenuSelection(user_selection, library)
 
 
-def runMenu(library):
-    user_selection = raw_input(_showMenu())
-    _validateMenuSelection(user_selection, 3, library)
-    return user_selection
-
-
 # ========================================================================================================================
 
 from Library import *
-from constants import *
 
 smitsonian = Library()
 _welcome(smitsonian.name)
-user_selection = raw_input(_showMenu())
+print _showMenu()
+user_selection = user_selection = raw_input(" Please make a selection: ")
 _processMenuSelection(user_selection, smitsonian)
 
 # ========================================================================================================================
