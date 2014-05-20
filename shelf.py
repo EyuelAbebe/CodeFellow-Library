@@ -33,5 +33,3 @@ def getShelfNumber(subject):
 
 
 
-# + " " * (_spacer ) + "ID"
-#  + "000" + " " * ((_spacer *2) - 3)
