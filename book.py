@@ -45,7 +45,9 @@ class Book():
     def unshelf(self):
         _shelfContent = contentOfShelves[list_of_shelves.index(self.subject)][0]
         _title = self.name  #book_quantity.keys()[list_of_shelves.index(self.subject)]#_title = books[self.id]
-        _shelfContent[self.subject][_title] += -1
+        bookqty = int(_shelfContent[self.subject][_title])
+        bookqty += -1
+        _shelfContent[self.subject][_title] = bookqty
         del books[self.id]
 
 
