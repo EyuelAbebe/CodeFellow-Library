@@ -50,10 +50,9 @@ def _processMenuSelection(user_selection, library):
         while (_q != 22):
             user_book_selection = raw_input("Choose a book: ")
 
-            _selectedBook = books[bookObjects[int(user_shelf_selection) - 1][_bookindex].id].upper()
             try:
                 _bookdict = contentOfShelves[int(user_shelf_selection)-1][0][list_of_shelves[int(user_shelf_selection) - 1]]
-                _bookindex = _countBookQuantity(_bookdict, int(user_book_selection) ) 
+                _bookindex = _countBookQuantity(_bookdict, int(user_book_selection) -1) 
 
 
                 _selectedBook = books[bookObjects[int(user_shelf_selection) - 1][_bookindex].id].upper()
@@ -64,7 +63,7 @@ def _processMenuSelection(user_selection, library):
                 print "Thank you for checking out " + _selectedBook  + ". Please return on time!"
                 print
             except Exception as e:
-                print books[bookObjects[int(user_shelf_selection) - 1][_bookindex].id]
+                #print books[bookObjects[int(user_shelf_selection) - 1][_bookindex].id]
                 print e
                 print "Sorry, we no longer have a copy of this book. Please check back again some other time."
                 print
