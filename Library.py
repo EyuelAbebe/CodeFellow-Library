@@ -8,6 +8,8 @@ import sys
 
 class Library():
     def __init__(self):
+        print 
+        print "="*20 + " WELCOME " + "="*20
         self.name = raw_input("Enter name of Library: ").upper()
         print
         print "-"*(4) + " Lets build the " + self.name.upper() + " Library " + "-"*(4)
@@ -49,7 +51,7 @@ class Library():
     def showAllBooks(self):
         if books == {}:
             print
-            print "This is a new Library. We have no books yet."
+            print "We have no books for now. Please visit again!"
         else:
             print
             print "-"*67
@@ -78,6 +80,10 @@ class Library():
         if _shelf.keys() == []:
             print
             print "Shelf is Empty!"
+            print "=" * (_spacer *7 + 13)
+            print
+            print
+            return 22
         else:
             _i = 1
             for key in _shelf:

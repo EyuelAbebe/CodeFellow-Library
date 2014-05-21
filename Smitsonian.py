@@ -4,7 +4,7 @@ __author__ = 'eyuelabebe'
 
 menu_options = ['A', 'B', 'C', 'a', 'b', 'c']
 
-
+from constants import contentOfShelves
 
 import sys
 
@@ -23,6 +23,17 @@ def _showMenu():
     print main_menu
 
 
+def _countBookQuantity(dic, ind):
+    _count = 0
+    _key = dic.keys()
+    if ind == 0:
+        return int(dic[_key[0]]) -1
+    else:
+        for i in range(ind):
+            _count += int(dic[_key[i]])
+
+        return _count
+
 def _processMenuSelection(user_selection, library):
 
     """
@@ -35,18 +46,30 @@ def _processMenuSelection(user_selection, library):
         library.showAvailableShelves()
         user_shelf_selection = raw_input("Choose a subject: ")
 
-        library.showShelfBooks(list_of_shelves[int(user_shelf_selection) - 1])
-        user_book_selection = raw_input("Choose a book: ")
-        try:
+        _q  = library.showShelfBooks(list_of_shelves[int(user_shelf_selection) - 1])
+        while (_q != 22):
+            user_book_selection = raw_input("Choose a book: ")
 
-            bookObjects[int(user_shelf_selection) - 1][int(user_book_selection)-1].unshelf()
-            bookObjects[int(user_shelf_selection)-1].pop(int(user_book_selection)-1)
-            print "Thank you for checking out " + books[bookObjects[int(user_shelf_selection) - 1][int(user_book_selection)-1].id] + ". Please return on time!"
-            print
-        except Exception as e:
-            #print e
-            print "Sorry, we no longer have a copy of this book. Please check back again some other time."
-            print
+            _selectedBook = books[bookObjects[int(user_shelf_selection) - 1][_bookindex].id].upper()
+            try:
+                _bookdict = contentOfShelves[int(user_shelf_selection)-1][0][list_of_shelves[int(user_shelf_selection) - 1]]
+                _bookindex = _countBookQuantity(_bookdict, int(user_book_selection) ) 
+
+
+                _selectedBook = books[bookObjects[int(user_shelf_selection) - 1][_bookindex].id].upper()
+                bookObjects[int(user_shelf_selection) - 1][_bookindex].unshelf()
+                del bookObjects[int(user_shelf_selection)-1][_bookindex]
+
+
+                print "Thank you for checking out " + _selectedBook  + ". Please return on time!"
+                print
+            except Exception as e:
+                print books[bookObjects[int(user_shelf_selection) - 1][_bookindex].id]
+                print e
+                print "Sorry, we no longer have a copy of this book. Please check back again some other time."
+                print
+            _q = 22
+
 
         _question = raw_input("Would you like to go back to the menu(M) or exit(C): ")
 
@@ -109,6 +132,7 @@ def _validateMenuSelection(user_selection, count, library):
 from Library import *
 
 smitsonian = Library()
+print
 _welcome(smitsonian.name)
 print _showMenu()
 user_selection = user_selection = raw_input(" Please make a selection: ")

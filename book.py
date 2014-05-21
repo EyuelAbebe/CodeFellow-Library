@@ -47,7 +47,10 @@ class Book():
         _title = self.name  #book_quantity.keys()[list_of_shelves.index(self.subject)]#_title = books[self.id]
         bookqty = int(_shelfContent[self.subject][_title])
         bookqty += -1
-        _shelfContent[self.subject][_title] = bookqty
+        if bookqty == 0:
+            del _shelfContent[self.subject][_title]
+        else:
+            _shelfContent[self.subject][_title] = bookqty
         del books[self.id]
 
 
